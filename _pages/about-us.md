@@ -7,14 +7,6 @@ post_excerpt: ""
 layout: page
 permalink: http://localhost/wordpress/about-us/
 published: true
-sbg_selected_sidebar:
-  - 'a:1:{i:0;s:1:"0";}'
-sbg_selected_sidebar_replacement:
-  - 'a:1:{i:0;s:0:"";}'
-sbg_selected_sidebar_2:
-  - 'a:1:{i:0;s:1:"0";}'
-sbg_selected_sidebar_2_replacement:
-  - 'a:1:{i:0;s:0:"";}'
 pyre_slider_position:
   - default
 pyre_slider_type:
@@ -133,4 +125,12 @@ pyre_page_title_bg_parallax:
   - default
 pyre_page_title_breadcrumbs_search_bar:
   - default
+sbg_selected_sidebar:
+  - 'a:1:{i:0;s:1:"0";}'
+sbg_selected_sidebar_replacement:
+  - 'a:1:{i:0;s:0:"";}'
+sbg_selected_sidebar_2:
+  - 'a:1:{i:0;s:1:"0";}'
+sbg_selected_sidebar_2_replacement:
+  - 'a:1:{i:0;s:0:"";}'
 ---
