@@ -134,4 +134,3 @@ sbg_selected_sidebar_2:
 sbg_selected_sidebar_2_replacement:
   - 'a:1:{i:0;s:0:"";}'
 ---
-[wpb-product-slider category="upcoming"]
