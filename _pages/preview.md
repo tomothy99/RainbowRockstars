@@ -134,3 +134,4 @@ sbg_selected_sidebar_2:
 sbg_selected_sidebar_2_replacement:
   - 'a:1:{i:0;s:0:"";}'
 ---
+[product_category category="upcoming" per_page="12" columns="4" orderby="price" order="asc"]
