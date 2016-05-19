@@ -151,7 +151,7 @@ Draw to purchase bags available in the March "All about the tote" bag release by
 </p>
 
 
-<form action="itemSelection.php" method="post">
+<form action="" method="post">
 
   First Name:<br>
   <input type="text" name="firstname" placeholder="James"><br><br>
@@ -238,10 +238,7 @@ else{
 ?><span><?php echo "<br><br>Please fill all fields.....!!!!!!!!!!!!";?></span> <?php
 }
 }
-
- 
-	
-	$conn->close();
+$conn->close();
 
 ?>
 </form>
