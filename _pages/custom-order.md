@@ -134,3 +134,18 @@ sbg_selected_sidebar_2:
 sbg_selected_sidebar_2_replacement:
   - 'a:1:{i:0;s:0:"";}'
 ---
+<code>
+
+<form action="itemSelection.php" method="post">
+
+  First Name:<br>
+  <input type="text" name="firstname" placeholder="James"><br><br>
+  Last Name:<br>
+  <input type="text" name="lastname" placeholder="Smith"><br><br>
+  Email:<br>
+  <input type="email" name="email" placeholder="John.Smith@email.net"><br><br>
+  Address:<br>
+  <input type="text" name="address" placeholder="Australia"><br><br>
+</form>
+
+</code>
