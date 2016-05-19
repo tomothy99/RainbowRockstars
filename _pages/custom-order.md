@@ -135,8 +135,22 @@ sbg_selected_sidebar_2_replacement:
   - 'a:1:{i:0;s:0:"";}'
 ---
 <code>
+<?php 
+if(isset($_POST['submit'])){
+$to = "tpw99@hotmail.com";
+$from = $_POST['email'];
+$subject = "Custom Order";
+$first_name = $_POST['firstname'];
+$last_name = $_POST['lastname'];
+$message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['description'];
+$headers = "From:" . $from;
 
-<form action="itemSelection.php" method="post">
+mail($to,$subject,$message,$headers);
+echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+
+}
+?>
+<form action="" method="post">
 
   First Name:<br>
   <input type="text" name="firstname" placeholder="James"><br><br>
@@ -144,8 +158,10 @@ sbg_selected_sidebar_2_replacement:
   <input type="text" name="lastname" placeholder="Smith"><br><br>
   Email:<br>
   <input type="email" name="email" placeholder="John.Smith@email.net"><br><br>
-  Address:<br>
-  <input type="text" name="address" placeholder="Australia"><br><br>
+  Item Description/ Item Details:<br>
+  <input type="text" name="description" placeholder="Red bag with red stitching..."><br><br>
+<input type="submit" name="submit" id="submit" class="button" value="Submit"/>
+
 </form>
 
 </code>
