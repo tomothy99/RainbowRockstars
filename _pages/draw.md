@@ -238,9 +238,7 @@ else{
 ?><span><?php echo "<br><br>Please fill all fields.....!!!!!!!!!!!!";?></span> <?php
 }
 }
-$conn->close();
 
-?>
 </form>
 
 
