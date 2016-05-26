@@ -141,10 +141,7 @@ include "config.php"; // Database connection using PDO
 <p>
 Draw to purchase bags available in the March "All about the tote" bag release by Rainbow Rockstars. Only one bag can be drawn per entry. Multiple entries are allowed provided that entrants understand that all winning entries must be paid for. Preferences can be as few, or as many as you like. Preference boxes do not all need to be filled in. Draw will begin at 10am aest (qld time) on Wednesday 23rd of March and closes at 10am aest (qld time) Thursday 24th of March. Winning entries will be invoiced shortly after, to the email address provided and given 24hrs, from time of invoice, to pay. International entries are welcome and postage fees will be adjusted accordingly.  Prices stated below do not include postage. By entering this draw you agree to the terms stated here.
 </p>
-
-
 <form method="post">
-
   First Name:<br>
   <input type="text" name="firstname" placeholder="James"><br><br>
   Last Name:<br>
@@ -153,8 +150,6 @@ Draw to purchase bags available in the March "All about the tote" bag release by
   <input type="email" name="email" placeholder="John.Smith@email.net"><br><br>
   Address:<br>
   <input type="text" name="address" placeholder="Australia"><br><br>
-
-
 <h3>Preference 1</h3>  
 <select name="pref1">
     <option value="" default selected>Select</option>
@@ -168,7 +163,6 @@ $result = $conn->query("select * from draw");
 } 
 ?> 
 </select>
-
 <h3>Preference 2</h3>  
 <select name="pref2">
     <option value="" default selected>Select</option>
@@ -182,7 +176,6 @@ $result = $conn->query("select * from draw");
 }   
 ?> 
 </select>
-
 <h3>Preference 3</h3>  
 <select name="pref3">
     <option value="" default selected>Select</option>
@@ -196,7 +189,6 @@ $result = $conn->query("select * from draw");
 }   
 ?> 
 </select>
-
 <h3>Preference 4</h3>  
 <select name="pref4" id='pref4'>
     <option value="" default selected>Select</option>
@@ -208,7 +200,6 @@ $result = $conn->query("select * from draw");
 				  $price = $row['price'];
                   echo "<option> Product: ".$name." &nbsp;&nbsp;Price: $".$price."</option>";
 }   
-
 ?> 
 </select>
 <br>
@@ -224,44 +215,27 @@ $pref1 = $_POST['pref1'];
 $pref2 = $_POST['pref2'];
 $pref3 = $_POST['pref3'];
 $pref4 = $_POST['pref4'];
-
 if($fname !=''&& $lname !=''&& $email !=''&& $address !='')
 {
-	
 $sql = "INSERT INTO draw_users (fname, lname, email, address)
 VALUES ('$fname', '$lname', '$email', '$address')";
 $pref = "INSERT INTO draw_preferences (email, pref1, pref2, pref3, pref4)
 VALUES ('$email', '$pref1', '$pref2', '$pref3', '$pref4')";
 $select = "SELECT * FROM draw_users";
-
-
-
   $email = $_POST['email'];
 $result = mysqli_query($conn,"SELECT * FROM draw_users");
   $row = mysqli_fetch_array($result);
-
 if ($conn->query($sql) === TRUE && $conn->query($pref) === TRUE) {
 	 <br><br>echo 'Entered Preferences';
 } else {
     <br><br>echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
-
-         
-		 
-		 
-
 }
 }
 else{
 ?><span><?php echo "<br><br>Please fill all fields.....!!!!!!!!!!!!";?></span> <?php
 }
-
-
- 
-	
-	$conn->close();
-
+$conn->close();
 ?>
 </form>
 </code>
