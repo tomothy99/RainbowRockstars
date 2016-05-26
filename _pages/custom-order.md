@@ -135,5 +135,5 @@ sbg_selected_sidebar_2_replacement:
   - 'a:1:{i:0;s:0:"";}'
 ---
 <code>
-[contact-form-7 id="1234" title="Contact form 1"]
+[contact-form-7 id="52" title="Custom Order"]
 </code>
