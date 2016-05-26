@@ -137,10 +137,6 @@ sbg_selected_sidebar_2_replacement:
 <code><?php
 include "config.php"; // Database connection using PDO
 ?>
-
-<p>
-Draw to purchase bags available in the March "All about the tote" bag release by Rainbow Rockstars. Only one bag can be drawn per entry. Multiple entries are allowed provided that entrants understand that all winning entries must be paid for. Preferences can be as few, or as many as you like. Preference boxes do not all need to be filled in. Draw will begin at 10am aest (qld time) on Wednesday 23rd of March and closes at 10am aest (qld time) Thursday 24th of March. Winning entries will be invoiced shortly after, to the email address provided and given 24hrs, from time of invoice, to pay. International entries are welcome and postage fees will be adjusted accordingly.  Prices stated below do not include postage. By entering this draw you agree to the terms stated here.
-</p>
 <form method="post">
   First Name:<br>
   <input type="text" name="firstname" placeholder="James"><br><br>
