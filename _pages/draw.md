@@ -135,15 +135,7 @@ sbg_selected_sidebar_2_replacement:
   - 'a:1:{i:0;s:0:"";}'
 ---
 <code><?php
-//database connection variables
-$user="root";
-$password="cUznnGsC9JTjcScR";
-$database="wordpress";
-$host="localhost";
-
-//database connection
-$conn = new mysqli($host, $user, $password, $database) 
-or die ('Cannot connect to db');
+include "config.php"; // Database connection using PDO
 ?>
 
 <p>
@@ -151,7 +143,7 @@ Draw to purchase bags available in the March "All about the tote" bag release by
 </p>
 
 
-<form action="" method="post">
+<form method="post">
 
   First Name:<br>
   <input type="text" name="firstname" placeholder="James"><br><br>
@@ -159,13 +151,13 @@ Draw to purchase bags available in the March "All about the tote" bag release by
   <input type="text" name="lastname" placeholder="Smith"><br><br>
   Email:<br>
   <input type="email" name="email" placeholder="John.Smith@email.net"><br><br>
-  Country:<br>
-  <input type="text" name="country" placeholder="Australia"><br><br>
+  Address:<br>
+  <input type="text" name="address" placeholder="Australia"><br><br>
 
 
 <h3>Preference 1</h3>  
-<select name='Name'>
-<option>Select</option>
+<select name="pref1">
+    <option value="" default selected>Select</option>
 <?php
 $result = $conn->query("select * from draw");
     while ($row = $result->fetch_assoc()) {
@@ -178,8 +170,8 @@ $result = $conn->query("select * from draw");
 </select>
 
 <h3>Preference 2</h3>  
-<select name='Name'>
-<option>Select</option>
+<select name="pref2">
+    <option value="" default selected>Select</option>
 <?php
     $result = $conn->query("select * from draw");
     while ($row = $result->fetch_assoc()) {
@@ -192,8 +184,8 @@ $result = $conn->query("select * from draw");
 </select>
 
 <h3>Preference 3</h3>  
-<select name='Name'>
-<option>Select</option>
+<select name="pref3">
+    <option value="" default selected>Select</option>
 <?php
     $result = $conn->query("select * from draw");
     while ($row = $result->fetch_assoc()) {
@@ -206,8 +198,8 @@ $result = $conn->query("select * from draw");
 </select>
 
 <h3>Preference 4</h3>  
-<select name='Name'>
-<option>Select</option>
+<select name="pref4" id='pref4'>
+    <option value="" default selected>Select</option>
 <?php
     $result = $conn->query("select * from draw");
     while ($row = $result->fetch_assoc()) {
@@ -224,22 +216,52 @@ $result = $conn->query("select * from draw");
 <input type="submit" name="submit" id="submit" class="button" value="Submit"/>
 <?php
 if(isset($_POST['submit'])){
-// Fetching variables of the form which travels in URL
 $fname = $_POST['firstname'];
 $lname = $_POST['lastname'];
 $email = $_POST['email'];
-$country = $_POST['country'];
-if($fname !=''&& $lname !=''&& $email !=''&& $country !='')
+$address = $_POST['address'];
+$pref1 = $_POST['pref1'];
+$pref2 = $_POST['pref2'];
+$pref3 = $_POST['pref3'];
+$pref4 = $_POST['pref4'];
+
+if($fname !=''&& $lname !=''&& $email !=''&& $address !='')
 {
-//  To redirect form on a particular page
-header("Location:https://www.google.com");
+	
+$sql = "INSERT INTO draw_users (fname, lname, email, address)
+VALUES ('$fname', '$lname', '$email', '$address')";
+$pref = "INSERT INTO draw_preferences (email, pref1, pref2, pref3, pref4)
+VALUES ('$email', '$pref1', '$pref2', '$pref3', '$pref4')";
+$select = "SELECT * FROM draw_users";
+
+
+
+  $email = $_POST['email'];
+$result = mysqli_query($conn,"SELECT * FROM draw_users");
+  $row = mysqli_fetch_array($result);
+
+if ($conn->query($sql) === TRUE && $conn->query($pref) === TRUE) {
+	 <br><br>echo 'Entered Preferences';
+} else {
+    <br><br>echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
+         
+		 
+		 
+
+}
 }
 else{
 ?><span><?php echo "<br><br>Please fill all fields.....!!!!!!!!!!!!";?></span> <?php
 }
-}
 
+
+ 
+	
+	$conn->close();
+
+?>
 </form>
-
-
 </code>
